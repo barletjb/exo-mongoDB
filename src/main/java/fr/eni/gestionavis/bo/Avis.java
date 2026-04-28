@@ -6,7 +6,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 
 @Getter
@@ -30,5 +29,8 @@ public class Avis {
 
     @Field(name = "date")
     private LocalDateTime date;
+
+    @Field(name = "client")
+    private Client client;
 
 }

@@ -33,9 +33,31 @@ class AvisTest {
         Assertions.assertThat(avisDB).isNotNull();
     }
 
-
     @Test
     @Order(2)
+    void test_saveReviewWithClient(){
+
+        Client client = Client.builder()
+                .pseudo("Gros Désir")
+                .quantiteCommandee(10)
+                .build();
+
+        Avis avis =  Avis.builder()
+                .note(5)
+                .commentaire("Ceci est nouveau commentaire")
+                .date(LocalDateTime.now())
+                .client(client)
+                .build();
+
+        Avis avisDB = avisRepository.save(avis);
+
+        Assertions.assertThat(avisDB).isNotNull();
+    }
+
+
+
+    @Test
+    @Order(3)
     void test_findAllReviews(){
 
         Avis avis =  Avis.builder()
@@ -44,12 +66,14 @@ class AvisTest {
                 .date(LocalDateTime.now())
                 .build();
 
-        Avis avisDB = avisRepository.save(avis);
+        avisRepository.save(avis);
 
         List<Avis> listAvis = avisRepository.findAll();
 
-        Assertions.assertThat(listAvis).hasSize(2);
+        Assertions.assertThat(listAvis).hasSize(3);
     }
+
+
 
 
 }
