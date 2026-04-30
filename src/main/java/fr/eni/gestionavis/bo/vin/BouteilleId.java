@@ -4,6 +4,8 @@ package fr.eni.gestionavis.bo.vin;
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.io.Serializable;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -11,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 @ToString
 @EqualsAndHashCode
 @Builder
-public class BouteilleId {
+public class BouteilleId implements Serializable {
 
     @Field(name = "bottle_id")
     private int idBouteille;

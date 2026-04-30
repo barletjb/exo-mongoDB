@@ -16,13 +16,26 @@ import org.springframework.data.mongodb.core.mapping.Field;
 @Document(collection = "bottle")
 public class Bouteille {
 
+//    @Id
+//    @Field(name = "bottle_id")
+//    private BouteilleId bouteilleId;
+
     @Id
     @Field(name = "bottle_id")
-    private BouteilleId bouteilleId;
+    private String id;
 
     @Field(name = "name")
     @Indexed(unique = true)
     private String nom;
+
+    @Field(name = "region")
+    @Indexed(unique = true)
+    private String region;
+
+    @Field(name = "color")
+    private String couleur;
+
+
 
 
 }

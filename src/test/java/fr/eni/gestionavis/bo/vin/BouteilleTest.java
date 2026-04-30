@@ -21,15 +21,11 @@ class BouteilleTest {
 
     @Test
     void test01_save(){
-        BouteilleId bouteilleId = BouteilleId.builder()
-                .idBouteille(2298)
-                .idCouleur(1)
-                .idRegion(5)
-                .build();
 
         Bouteille bouteille = Bouteille.builder()
-                .bouteilleId(bouteilleId)
-                .nom("Jus de bagarre")
+                .region("Loire")
+                .couleur("Du red qui tache")
+                .nom("Jus de bagarre2")
                 .build();
 
         Bouteille bouteilleDB = bouteilleRepository.save(bouteille);
@@ -37,11 +33,8 @@ class BouteilleTest {
         log.info(bouteilleDB.toString());
 
         Assertions.assertNotNull(bouteilleDB);
-        Assertions.assertNotNull(bouteilleDB.getBouteilleId());
+        Assertions.assertNotNull(bouteilleDB.getId());
 
     }
-
-
-
 
 }

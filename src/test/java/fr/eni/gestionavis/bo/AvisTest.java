@@ -88,7 +88,7 @@ class AvisTest {
         Assertions.assertThat(avisDB).isNotNull();
         Assertions.assertThat(avisDB.getClient()).isNotNull();
         Assertions.assertThat(avisDB.getBouteille()).isNotNull();
-        Assertions.assertThat(avisDB.getBouteille().getBouteilleId()).isEqualTo(bouteille.getBouteilleId());
+        Assertions.assertThat(avisDB.getBouteille().getId()).isEqualTo(bouteille.getId());
 
 
     }
